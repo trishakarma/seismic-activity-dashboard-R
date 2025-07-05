@@ -83,22 +83,6 @@ server <- function(input, output) {
     )
   })
   
-  output$timeline <- renderPlotly({
-    df <- data()
-    
-    p <- ggplot(df, aes(x = time, y = duration_magnitude_md, color = type)) +
-      geom_point(alpha = 0.7, size = 1.5) +
-      labs(title = "Seismic Activity Over Time",
-           x = "Date",
-           y = "Duration Magnitude (Md)",
-           color = "Event type") +
-      theme_minimal() +
-      theme(legend.position = "bottom") +
-      scale_color_viridis_d()
-    
-    ggplotly(p, tooltip = c("x", "y", "colour"))
-  })
-  
   output$`loc-map` <- renderPlotly({
     df <- data()
     

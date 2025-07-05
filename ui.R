@@ -12,6 +12,7 @@ library(shinydashboard)
 library(plotly)
 library(ggplot2)
 library(readr)
+library(lubridate)
 
 # Define UI for application that draws a histogram
 ui <- dashboardPage(
@@ -54,13 +55,6 @@ ui <- dashboardPage(
                       ),
                       fluidRow(
                         box(
-                          title = "Activity Timeline", status = "danger", solidHeader = TRUE,
-                          width = 12, height = 500,
-                          plotlyOutput("timeline")
-                        )
-                      ),
-                      fluidRow(
-                        box(
                           title = "Event Map", status = "danger", solidHeader = TRUE,
                           width = 12, height = 500,
                           plotlyOutput("loc-map")
@@ -72,26 +66,26 @@ ui <- dashboardPage(
                     fluidRow(
                       box(
                         title = "Number of Events, Annually", status = "warning", solidHeader = TRUE,
-                        width = 12, height = 400,
+                        width = 12, height = 455,
                         plotlyOutput("annual_trends")
                       )
                       ),
                     fluidRow(
                       box(
                         title = "Monthly Dist.", status = "warning", solidHeader = TRUE,
-                        width = 6, height = 400,
+                        width = 6, height = 455,
                         plotlyOutput("monthly-graph")
                       ),
                       box(
                         title = "Hourly Dist.", status = "warning", solidHeader = TRUE,
-                        width = 6, height = 400,
+                        width = 6, height = 455,
                         plotlyOutput("hourly-graph")
                       )
                     ),
                     fluidRow(
                       box(
                         title = "Magnitude Trends with Time", status = "warning", solidHeader = TRUE,
-                        width = 12, height = 400,
+                        width = 12, height = 455,
                         plotlyOutput("magnitude-trend")
                       )
                     )
